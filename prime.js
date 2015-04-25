@@ -8,7 +8,7 @@ function is_prime(n){
 
 //if a number is prime and is of the form 2q+1 where q is prime
 function sophie_germain(n){
-	if (is_prime((n-1)/2)){
+	if (is_prime((n*2)+1)){
 		return true;
 	}
 	return false
