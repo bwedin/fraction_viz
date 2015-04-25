@@ -20,24 +20,15 @@ function givenRemainders(remainder_array,win_size) {
   return listOfAngles;
 }
 
+function givenPaths(remainder_array,line_data) {
 
-//This is the accessor function we talked about above
-var lineFunction = d3.svg.line()
-                         .x(function(d) { return d.x; })
-                         .y(function(d) { return d.y; })
-                         .interpolate("linear");
-
-//The SVG Container
-var svgContainer = d3.select("body").append("svg")
-                                    .attr("width", 200)
-                                    .attr("height", 200);
-
-//The line SVG Path we draw
-var test_shtuff = [1,4,9,16,56,2,1,5,6,2,7,9,4,8,4,78,23,1];
-var line_data = givenRemainders(test_shtuff, 200);
+  //This is the accessor function we talked about above
+  var lineFunction = d3.svg.line()
+                           .x(function(d) { return d.x; })
+                           .y(function(d) { return d.y; })
+                           .interpolate("linear");
 
 
-function givenRemainders(remainder_array,line_data) {
   line_data_length = line_data.length;
   var svg = getElementById('svg')
   for (var i = 0; i < line_data_length; i++) {

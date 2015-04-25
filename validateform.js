@@ -5,11 +5,12 @@ function validateForm() {
     if (numer == (null || "") || numer < 1 ||
          denom == (null || "") || denom < 1 ||
          mod == (null || "") || mod < 1) {
-        alert("All fields must be filled out");
+        alert("All fields must be filled out with positive integers");
         return false;
     }
   	if (denom <= numer) {
         alert("Please make numerator less than the denominator (for aesthetic reasons)");
         return false;
     }
+    return true;
 }

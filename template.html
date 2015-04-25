@@ -9,21 +9,37 @@
 		var max = window.innerHeight-90;
 		if(window.innerWidth-200 > max) {
 			max = window.innerWidth-200;
-			var my_window = getElementById('visualization')
+			var my_window = getElementById('svg')
 			my_window.attr("width", max).attr("height", max);
 		}
 		window.onresize = "resize()";
-
 		</script>
+		<script type="text/javascript">
+		function onSubmit()
+		{
+		if(validateForm()) {
+
+		}
+		</script>
+		<script
+		if(window.innerWidth-200 > max) {
+			max = window.innerWidth-200;
+			var my_window = getElementById('svg')
+			my_window.attr("width", max).attr("height", max);
+		}
+		window.onresize = "resize()";
+		</script>
+		<script src="validateform.js"></script>
+		<script src="visualizing.js"></script>
 	</head>
 	<body>
 		<center><h2>A Witty Header</h2></center>
-		<svg id="visualization" width=600px height=600px
+		<svg id="svg" width=600px height=600px
 		style="border-style:solid; border-width:1px;">
 		</svg>
 		<div id="menu" style="position:absolute; right:20px; top:100px;
 			border-style:solid; border-width:1px; width:180px; height:115px;" >
-			<form name="myForm" action="demo_form.asp" onsubmit="validateForm()">
+			<form name="myForm" onsubmit="validateForm()">
 				<p>Numerator: <input type="int" name="numer"
 				placeholder="numerator" maxlength="5" size="10"><br>
 				Denominator: <input type="int" name="denom"
@@ -32,6 +48,14 @@
 				placeholder="modulus" maxlength="5" size="10"><br>
 				<input type="submit" value="Submit"></p>
 			</form>
+		</div>
+		<div id="info" style="position:absolute; right:20px; top:225px;
+			border-style:solid; border-width:1px; width:250px; height:400px;" >
+			<p>
+				Doing<br>
+				interesting<br>
+				things<br>
+			</p>
 		</div>
 	</body>
 </html>
