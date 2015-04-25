@@ -1,4 +1,7 @@
 function is_prime(n){
+	if (n == 2){
+		return true;
+	}
 	for(i = 2; i < Math.sqrt(n, 0.5)+1; i++)
         if (n%i==0){
         	return false;
@@ -33,3 +36,24 @@ function is_happy(n){
 	return true;
 }
 
+function prime_factors(n){
+	factors = [1]
+	for(k = 2; k < Math.floor(n/2); k++){
+		//console.log(i);
+		if (is_prime(k)){
+			//console.log("ben")
+			if(n%k == 0){
+				factors.push(k);
+			}
+			while (n%k == 0){
+				//console.log(n)
+				n = n/k;
+			}
+			
+		}
+	}
+	if (is_prime(n)){
+		factors.push(n)
+	}
+	return factors
+}
