@@ -14,18 +14,22 @@ function sophie_germain(n){
 	return false
 }
 
+//happy primes
 function is_happy(n){
+	var h = {};
 	n = n.toString();
-	console.log(n);
-	while(n != '0'){
-		console.log(n)
+	while(n != '1'){
+	    //console.log(n)
+		if (n in h){
+			return false;
+		}
 		var sum = 0
 		for(i = 0; i < n.length; i++){
 			sum += Math.pow(parseInt(n[i], 10), 2);
 		}
-		n = sum
+		h[n] = true
+		n = sum.toString()
 	}
+	return true;
 }
 
-is_happy(97);
-sophie_germain(101)
