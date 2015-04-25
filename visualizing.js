@@ -1,4 +1,4 @@
-function givenRemainders(remainder_array,win_size) {
+function createPathList(remainder_array,win_size) {
   var remainders_length = remainder_array.length;
   var max = 0;
   for (var i = 0; i < remainders_length; i++) {
@@ -21,23 +21,16 @@ function givenRemainders(remainder_array,win_size) {
 }
 
 
-//This is the accessor function we talked about above
-var lineFunction = d3.svg.line()
-                         .x(function(d) { return d.x; })
-                         .y(function(d) { return d.y; })
-                         .interpolate("linear");
-
-//The SVG Container
-var svgContainer = d3.select("body").append("svg")
-                                    .attr("width", 200)
-                                    .attr("height", 200);
-
-//The line SVG Path we draw
-var test_shtuff = [1,4,9,16,56,2,1,5,6,2,7,9,4,8,4,78,23,1];
-var line_data = givenRemainders(test_shtuff, 200);
 
 
-function givenRemainders(remainder_array,line_data) {
+
+function drawLines(remainder_array,line_data) {
+  //This is the accessor function we talked about above
+  var lineFunction = d3.svg.line()
+                           .x(function(d) { return d.x; })
+                           .y(function(d) { return d.y; })
+                           .interpolate("linear");
+
   line_data_length = line_data.length;
   var svg = getElementById('svg')
   for (var i = 0; i < line_data_length; i++) {

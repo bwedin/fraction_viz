@@ -3,6 +3,8 @@
 	<head>
 		<meta charset="UTF-8" />
 		<title>A Witty Title</title>
+		<script src="validateform.js"></script>
+		<script src="visualizing.js"></script>
 		<script type="text/javascript">
 		function resize()
 		{
@@ -18,7 +20,15 @@
 		function onSubmit()
 		{
 		if(validateForm()) {
-
+			var numer = document.forms["myForm"]["numer"].value;
+	  	var denom = document.forms["myForm"]["denom"].value;
+	  	var mod = document.forms["myForm"]["mod"].value;
+			var remainder_info = long_division(numer,denom,mod);
+			var line_paths = createPathList(remainder_info[1], 500);
+			drawLines(remainer_info,line_paths);
+			alert("hi ben");
+			}
+			alert("hi ben2");
 		}
 		</script>
 		<script
@@ -29,8 +39,6 @@
 		}
 		window.onresize = "resize()";
 		</script>
-		<script src="validateform.js"></script>
-		<script src="visualizing.js"></script>
 	</head>
 	<body>
 		<center><h2>A Witty Header</h2></center>
@@ -39,7 +47,7 @@
 		</svg>
 		<div id="menu" style="position:absolute; right:20px; top:100px;
 			border-style:solid; border-width:1px; width:180px; height:115px;" >
-			<form name="myForm" onsubmit="validateForm()">
+			<form name="myForm" onsubmit="onSubmit()">
 				<p>Numerator: <input type="int" name="numer"
 				placeholder="numerator" maxlength="5" size="10"><br>
 				Denominator: <input type="int" name="denom"
