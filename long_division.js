@@ -10,4 +10,5 @@ function long_division(n, d, mod){
 	return remainders;
 }
 
+
 //console.log(long_division(1, 101, 103))
