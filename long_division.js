@@ -11,10 +11,6 @@ function long_division(n, d, mod){
 	return what_type(remainders, d, mod);
 }
 
-<<<<<<< Updated upstream
-
-//console.log(long_division(1, 101, 103))
-=======
 function what_type(remainders, d, mod){
 	console.log("C")	
 	if(gcd(mod, d) == 1){
@@ -85,4 +81,3 @@ function gcd(a, b) {
 var ld = long_division(13, 28, 2364)
 console.log(ld)
 
->>>>>>> Stashed changes
