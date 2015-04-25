@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>A Witty Title</title>
+		<script type="text/javascript">
+		function resize()
+		{
+		var max = window.innerHeight-90;
+		if(window.innerWidth-200 > max) {
+			max = window.innerWidth-200;
+			var my_window = getElementById('visualization')
+			my_window.attr("width", max).attr("height", max);
+		}
+		window.onresize = "resize()";
+
+		</script>
+	</head>
+	<body>
+		<center><h2>A Witty Header</h2></center>
+		<svg id="visualization" width=600px height=600px
+		style="border-style:solid; border-width:1px;">
+		</svg>
+		<div id="menu" style="position:absolute; right:20px; top:100px;
+			border-style:solid; border-width:1px; width:180px; height:115px;" >
+			<form name="myForm" action="demo_form.asp" onsubmit="validateForm()">
+				<p>Numerator: <input type="int" name="numer"
+				placeholder="numerator" maxlength="5" size="10"><br>
+				Denominator: <input type="int" name="denom"
+				placeholder="denominator" maxlength="5" size="11"><br>
+				Base/modulus: <input type="int" name="mod"
+				placeholder="modulus" maxlength="5" size="10"><br>
+				<input type="submit" value="Submit"></p>
+			</form>
+		</div>
+	</body>
+</html>
