@@ -14,12 +14,12 @@ function long_division(n, d, mod){
 function what_type(remainders, d, mod){
 	console.log("C")	
 	if(gcd(mod, d) == 1){
-		result = find_period(remainders, 3);
-		return (3, result[0], result[1]);
+		var result = find_period(remainders, 3);
+		return [3, result[0], result[1]];
 	}
 	if(remainders[remainders.length -1] == 0){
-		
-		return (1, result[0], result[1]);
+		var result = find_period(remainders, 1);
+		return [1, result[0], result[1]];
 	}
 	result = find_period(remainders, 2);
 	return [2, result[0], result[1]];
@@ -31,7 +31,6 @@ function find_period(remainders, type){
 		var i = 0;
 		for(i = 0; i < remainders.length; i++){
 			if(remainders[i]==0){
-				i++
 				break
 			}
 		}		
@@ -43,7 +42,8 @@ function find_period(remainders, type){
 			}
 		}
 	}
-	var i = 3
+	i++
+
 	if(type == 2){
 		var arr = Array.apply(null, new Array(remainders.length)).map(Number.prototype.valueOf,0);
 		
@@ -63,10 +63,12 @@ function find_period(remainders, type){
 				break;
 			}
 		}
-		return [remainders.slice(0, end), end-start];
+		//console.log(remainders)
+		return [remainders.slice(0, end+1), end-start+1];
 	}
 	//remainders, and the length of the period
-	return [remainders.slice(0, i), i];
+	//console.log([remainders.slice(0, i), i-1])
+	return [remainders.slice(0, i), i-1];
 }
 
 function gcd(a, b) {
@@ -78,6 +80,6 @@ function gcd(a, b) {
     return gcd(b, a % b);
 }
 
-var ld = long_division(13, 28, 2364)
+var ld = long_division(4, 9, 5)
 console.log(ld)
 
