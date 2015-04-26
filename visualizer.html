@@ -52,7 +52,7 @@
 
 		<script>
 		function findMin(){
-		min = document.documentElement.clientWidth - 350;
+		min = document.documentElement.clientWidth - 370;
   	var height = document.documentElement.clientHeight;
 		if(height-90 < min) {
 			min = height-90;
@@ -71,10 +71,10 @@
 		</script>
 
 		<script>
-		function example1(){
-			document.getElementById('num_input').value = '1';
-			document.getElementById('denom_input').value = '101';
-			document.getElementById('mod_input').value = '103';
+		function example2(){
+			document.getElementById('num_input').value = '42';
+			document.getElementById('denom_input').value = '4242';
+			document.getElementById('mod_input').value = '424242';
 			onSubmit();
 		}
 		</script>
@@ -132,6 +132,8 @@
 				<b> Some examples</b>
 				<br>
 				<a id="myLink" href="#" onclick="example1();return false;">Example 1: 1/101, Base 103</a>
+				<br>
+				<a id="myLink" href="#" onclick="example2();return false;">Example 2: 42/4242, Base 424242</a>
 				</div>
 			</p>
 		</div>
