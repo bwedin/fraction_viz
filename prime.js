@@ -48,8 +48,7 @@ function prime_factors(n){
 			while (n%k == 0){
 				//console.log(n)
 				n = n/k;
-			}
-			
+			}			
 		}
 	}
 	if (is_prime(n)){
