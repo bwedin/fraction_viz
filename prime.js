@@ -1,4 +1,7 @@
 function is_prime(n){
+	if (n ==1){
+		return false;
+	}
 	if (n == 2){
 		return true;
 	}
@@ -56,3 +59,4 @@ function prime_factors(n){
 	}
 	return factors
 }
+
