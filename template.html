@@ -5,30 +5,34 @@
 		<title>A Witty Title</title>
 		<script src="validateform.js"></script>
 		<script src="visualizing.js"></script>
+		<script src="long_division.js"></script>
+		<script src="http://d3js.org/d3.v3.min.js"></script>
 		<script type="text/javascript">
 		function resize()
 		{
 		var max = window.innerHeight-90;
 		if(window.innerWidth-200 > max) {
 			max = window.innerWidth-200;
-			var my_window = getElementById('svg')
+			var my_window = document.getElementById('svg')
 			my_window.attr("width", max).attr("height", max);
 		}
 		window.onresize = "resize()";
 		</script>
 		<script type="text/javascript">
-		function onSubmit()
-		{
-		if(validateForm()) {
-			var numer = document.forms["myForm"]["numer"].value;
-	  	var denom = document.forms["myForm"]["denom"].value;
-	  	var mod = document.forms["myForm"]["mod"].value;
+		function onSubmit() {
+		var valid_input = validateForm();
+		if(valid_input==1) {
+			var numer = parseInt(document.forms["myForm"]["numer"].value);
+	  	var denom = parseInt(document.forms["myForm"]["denom"].value);
+	  	var mod = parseInt(document.forms["myForm"]["mod"].value);
+			var svg_container = d3.select("body").append("svg")
+		                                      .attr("width",600)
+		                                      .attr("height",600);
 			var remainder_info = long_division(numer,denom,mod);
-			var line_paths = createPathList(remainder_info[1], 500);
-			drawLines(remainer_info,line_paths);
+			var line_paths = createPathList(remainder_info[1], 600);
+			drawLines(remainder_info,line_paths,svg_container);
 			alert("hi ben");
 			}
-			alert("hi ben2");
 		}
 		</script>
 		<script
@@ -42,9 +46,9 @@
 	</head>
 	<body>
 		<center><h2>A Witty Header</h2></center>
-		<svg id="svg" width=600px height=600px
-		style="border-style:solid; border-width:1px;">
+		<svg>
 		</svg>
+
 		<div id="menu" style="position:absolute; right:20px; top:100px;
 			border-style:solid; border-width:1px; width:180px; height:115px;" >
 			<form name="myForm" onsubmit="onSubmit()">

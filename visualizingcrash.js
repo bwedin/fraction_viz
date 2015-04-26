@@ -30,7 +30,7 @@ function givenPaths(remainder_array,line_data) {
 
 
   line_data_length = line_data.length;
-  var svg = getElementById('svg')
+  var svg = getElementById('svg');
   for (var i = 0; i < line_data_length; i++) {
   var lineGraph = svg.append("path")
                            .attr("d", lineFunction(line_data[i]))

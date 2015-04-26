@@ -24,17 +24,18 @@ function createPathList(remainder_array,win_size) {
 
 
 
-function drawLines(remainder_array,line_data) {
+function drawLines(remainder_array,line_data,svg_container) {
   //This is the accessor function we talked about above
   var lineFunction = d3.svg.line()
                            .x(function(d) { return d.x; })
                            .y(function(d) { return d.y; })
                            .interpolate("linear");
 
-  line_data_length = line_data.length;
-  var svg = getElementById('svg')
+
+  var line_data_length = line_data.length;
+
   for (var i = 0; i < line_data_length; i++) {
-  var lineGraph = svg.append("path")
+  var lineGraph = svg_container.append("path")
                            .attr("d", lineFunction(line_data[i]))
                            .attr("stroke", "blue")
                           .attr("stroke-width", 2)
