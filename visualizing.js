@@ -18,14 +18,14 @@ function createPathList(remainder_array,win_size) {
     listOfJumps.push(Math.abs(remainder_array[i]-last));
     last = remainder_array[i];
 	}
-
-  return listOfAngles;
+  return [listOfAngles, listOfJumps];
 }
 
 
 
 
 
+function drawLines(remainder_array,line_data,jump_data,svg_container) {
   //This is the accessor function we talked about above
   var lineFunction = d3.svg.line()
                            .x(function(d) { return d.x; })
@@ -36,11 +36,17 @@ function createPathList(remainder_array,win_size) {
 
 
   var line_data_length = line_data.length;
+  var mod = parseInt(document.getElementById('mod_input').value);
 
   var color_list = ["aqua", "crimson", "limegreen", "darkorange", "darkslateblue",
   "firebrick", "fuchsia", "indigo", "lightsalmon", "mediumorchid",
+  "mediumspringgreen", "royalblue", "tomato", "violet"];
+
+  var color_ordered = ["maroon", "red", "darkorange", "gold", "greenyellow",
+    "lime", "cyan", "royalblue", "indigo", "fuchsia"]
 
   //random (except not)
+  if(1==2) {
     for (var i = 0; i < line_data_length; i++) {
     var lineGraph = svg_container.append("path")
                              .attr("d", lineFunction(line_data[i]))
