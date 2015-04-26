@@ -28,11 +28,13 @@
 			drawLines(remainder_info,remainder_list[0],remainder_list[1],svg_container);
 
 			var denom_elt = document.getElementById("denom_fact");
-			denom_elt.innerHTML = "Prime Factors: " + prime_factors(denom) + "<br> Prime: " + is_prime(denom);
+			denom_elt.innerHTML = "Prime Factors: " + prime_factors(denom) + "<br> Prime: " + is_prime(denom) + "<br> Happy Number: " + is_happy(denom);
 			var numer_elt = document.getElementById("numer_fact")
-			numer_elt.innerHTML = "Prime Factors: " + prime_factors(numer) + "<br> Prime: " + is_prime(numer);
+			numer_elt.innerHTML = "Prime Factors: " + prime_factors(numer) + "<br> Prime: " + is_prime(numer)+ "<br> Happy Number: " + is_happy(numer);
+;
 			var mod_elt = document.getElementById("mod_fact")
-			mod_elt.innerHTML = "Prime Factors: " + prime_factors(mod) + "<br> Prime: " + is_prime(mod);
+			mod_elt.innerHTML = "Prime Factors: " + prime_factors(mod) + "<br> Prime: " + is_prime(mod)+ "<br> Happy Number: " + is_happy(mod);
+;
 			}
 		}
 		</script>
