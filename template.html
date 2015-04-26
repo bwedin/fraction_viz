@@ -24,25 +24,38 @@
 	  		var mod = parseInt(document.getElementById('mod_input').value);
 			var remainder_info = long_division(numer,denom,mod);
 			svg_container.selectAll("*").remove();
-			var line_paths = createPathList(remainder_info[1], min);
-			drawLines(remainder_info,line_paths,svg_container);
 
-			// var denom_elt = document.getElementById("denom_fact")
-			// denom_elt.innerHTML = "Prime Factors: " + prime_factors(denom) + "<br> Prime: " + is_prime(denom);
-			// var numer_elt = document.getElementById("numer_fact")
-			// numer_elt.innerHTML = "Prime Factors: " + prime_factors(numer) + "<br> Prime: " + is_prime(numer);
+			var denom_elt = document.getElementById("denom_fact")
+			denom_elt.innerHTML = "Prime Factors: " + prime_factors(denom) + "<br> Prime: " + is_prime(denom);
+			var numer_elt = document.getElementById("numer_fact")
+			numer_elt.innerHTML = "Prime Factors: " + prime_factors(numer) + "<br> Prime: " + is_prime(numer);
+
+			var remainder_list = createPathList(remainder_info[1], min);
+			drawLines(remainder_info,remainder_list[0],remainder_list[1],svg_container);
+			var denom_elt = document.getElementById("denom_fact")
+			denom_elt.innerHTML = "Prime Factors: " + prime_factors(denom) + "<br> Prime: " + is_prime(denom);
+			var numer_elt = document.getElementById("numer_fact")
+			numer_elt.innerHTML = "Prime Factors: " + prime_factors(numer) + "<br> Prime: " + is_prime(numer);
+
 			}
 		}
 		</script>
 		<script>
 		function changeSize(){
+		min = findMin();
+		svg_container.attr("width",min)
+							.attr("height",min);
+		}
+		</script>
+
+		<script>
+		function findMin(){
 		min = document.documentElement.clientWidth - 300;
   	var height = document.documentElement.clientHeight;
 		if(height-90 < min) {
 			min = height-90;
 		}
-		svg_container.attr("width",min)
-							.attr("height",min);
+		return min;
 		}
 		</script>
 
@@ -55,7 +68,7 @@
 			var svg_container = d3.select("body").append("svg")
 																					.attr("width",600)
 																					.attr("height",600)
-																				
+
 			var min;
 			changeSize();
 			window.addEventListener('resize', changeSize);
@@ -82,13 +95,18 @@
 						<br>
 						<u> Denominator:</u>
 						<div id="denom_fact">
-						
+
 						</div>
 						<br>
 						<u> Modulus:</u>
 						<div id="mod_fact">
+<<<<<<< HEAD
 						
 						</div> -->
+=======
+
+						</div>
+>>>>>>> origin/master
 					</p>
 				</p>
 			</div>

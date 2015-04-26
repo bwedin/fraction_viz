@@ -10,10 +10,12 @@ function createPathList(remainder_array,win_size) {
   var scale = Math.floor(win_size/max);
   var last = remainder_array[0];
   var listOfAngles = []
+  var listOfJumps = []
   for (var i = 1; i < remainders_length; i++) {
     var lineData = [ { "x": last*scale,   "y": (win_size-last*scale)},  { "x": last*scale,  "y": (win_size-remainder_array[i]*scale)},
                  { "x": remainder_array[i]*scale,  "y": (win_size-remainder_array[i]*scale)} ]
     listOfAngles.push(lineData);
+    listOfJumps.push(Math.abs(remainder_array[i]-last));
     last = remainder_array[i];
 	}
 
@@ -24,7 +26,6 @@ function createPathList(remainder_array,win_size) {
 
 
 
-function drawLines(remainder_array,line_data,svg_container) {
   //This is the accessor function we talked about above
   var lineFunction = d3.svg.line()
                            .x(function(d) { return d.x; })
@@ -38,10 +39,8 @@ function drawLines(remainder_array,line_data,svg_container) {
 
   var color_list = ["aqua", "crimson", "limegreen", "darkorange", "darkslateblue",
   "firebrick", "fuchsia", "indigo", "lightsalmon", "mediumorchid",
-  "mediumspringgreen", "royalblue", "tomato", "violet"]
 
   //random (except not)
-  if(1==0) {
     for (var i = 0; i < line_data_length; i++) {
     var lineGraph = svg_container.append("path")
                              .attr("d", lineFunction(line_data[i]))
@@ -50,45 +49,22 @@ function drawLines(remainder_array,line_data,svg_container) {
                             .attr("fill", "none");
     }
   }
-  else {
-  if(remainder_array[0]==1 || 3){
-    if(1==1){
-      for (var i = 0; i < line_data_length; i++) {
-      var lineGraph = svg_container.append("path")
-                               .attr("d", lineFunction(line_data[i]))
-                               .attr("stroke", color_list[i%color_list.length])
-                              .attr("stroke-width", 2)
-                              .attr("fill", "none");
-    	}
-    }
-    else {
-      for (var i = 0; i < line_data_length; i++) {
-      var lineGraph = svg_container.append("path")
-                               .attr("d", lineFunction(line_data[i]))
-                               .attr("stroke", "blue")
-                              .attr("stroke-width", 4)
-                              .attr("fill", "none");
-    	}
+  else if (1==1) {
+    for (var i = 0; i < line_data_length; i++) {
+    var lineGraph = svg_container.append("path")
+                             .attr("d", lineFunction(line_data[i]))
+                             .attr("stroke", color_list[jump_data[i]%10])
+                            .attr("stroke-width", 2)
+                            .attr("fill", "none");
     }
   }
   else{
-    if(1==1){
-      for (var i = 0; i < line_data_length; i++) {
-      var lineGraph = svg_container.append("path")
-                               .attr("d", lineFunction(line_data[i]))
-                               .attr("stroke", color_list[i%color_list.length])
-                              .attr("stroke-width", 2)
-                              .attr("fill", "none");
-    	}
-    }
-    else {
-      for (var i = 0; i < line_data_length; i++) {
-      var lineGraph = svg_container.append("path")
-                               .attr("d", lineFunction(line_data[i]))
-                               .attr("stroke", "blue")
-                              .attr("stroke-width", 4)
-                              .attr("fill", "none");
-    	}
+    for (var i = 0; i < line_data_length; i++) {
+    var lineGraph = svg_container.append("path")
+                             .attr("d", lineFunction(line_data[i]))
+                             .attr("stroke", "black")
+                            .attr("stroke-width", 2)
+                            .attr("fill", "none");
     }
   }
 }
