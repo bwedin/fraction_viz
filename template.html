@@ -44,28 +44,32 @@
 	<body>
 		<center><h2>Rational Fraction Visualization</h2></center>
 
-		<script>
-		var svg_container = d3.select("body").append("svg")
-																				.attr("width",600)
-																				.attr("height",600)
-																			
-		var min;
-		changeSize();
-		window.addEventListener('resize', changeSize);
+		<div id="viz_container">
+			<script>
+			var svg_container = d3.select("body").append("svg")
+																					.attr("width",600)
+																					.attr("height",600)
+																				
+			var min;
+			changeSize();
+			window.addEventListener('resize', changeSize);
 
-		</script>
-		<div id="menu">
-				<p>Numerator: <input type="int" name="numer" onkeyup="onSubmit()"
-				id="num_input" placeholder="numerator"><br>
-				Denominator: <input type="int" name="denom" onkeyup="onSubmit()"
-				id="denom_input" placeholder="denominator"><br>
-				Base/modulus: <input type="int" name="mod" onkeyup="onSubmit()"
-				id="mod_input" placeholder="modulus"><br></p>
+			</script>
 		</div>
-		<div id="info">
-			<p>
-				<b> Interesting Facts</b>
-			</p>
+		<div id="container">
+			<div id="menu">
+					<p>Numerator: <input type="int" name="numer" onkeyup="onSubmit()"
+					id="num_input" placeholder="numerator"><br>
+					Denominator: <input type="int" name="denom" onkeyup="onSubmit()"
+					id="denom_input" placeholder="denominator"><br>
+					Base/modulus: <input type="int" name="mod" onkeyup="onSubmit()"
+					id="mod_input" placeholder="modulus"><br></p>
+			</div>
+			<div id="info">
+				<p>
+					<b> Interesting Facts</b>
+				</p>
+			</div>
 		</div>
 	</body>
 </html>
