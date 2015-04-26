@@ -4,7 +4,7 @@
 		<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
-		<title>A Witty Title</title>
+		<title>Rational Fraction Visualization</title>
 		<script src="validateform.js"></script>
 		<script src="visualizing.js"></script>
 		<script src="long_division.js"></script>
@@ -23,23 +23,25 @@
 							.attr("height",min);
 		}
 		</script>
-		<script type="text/javascript">
-		function onSubmit() {
-		var valid_input = validateForm();
-		if(valid_input==1) {
-			var numer = parseInt(document.getElementById('num_input').value);
-	  	var denom = parseInt(document.getElementById('denom_input').value);
-	  	var mod = parseInt(document.getElementById('mod_input').value);
-			var remainder_info = long_division(numer,denom,mod);
-			svg_container.selectAll("*").remove();
-			var line_paths = createPathList(remainder_info[1], min);
-			drawLines(remainder_info,line_paths,svg_container);
+		<p>
+			<script type="text/javascript">
+			function onSubmit() {
+			var valid_input = validateForm();
+			if(valid_input==1) {
+				var numer = parseInt(document.getElementById('num_input').value);
+		  	var denom = parseInt(document.getElementById('denom_input').value);
+		  	var mod = parseInt(document.getElementById('mod_input').value);
+				var remainder_info = long_division(numer,denom,mod);
+				svg_container.selectAll("*").remove();
+				var line_paths = createPathList(remainder_info[1], min);
+				drawLines(remainder_info,line_paths,svg_container);
+				}
 			}
-		}
-		</script>
+			</script>
+		</p>
 	</head>
 	<body>
-		<center><h2>A Witty Header</h2></center>
+		<center><h2>Rational Fraction Visualization</h2></center>
 
 		<script>
 		var svg_container = d3.select("body").append("svg")
@@ -52,8 +54,8 @@
 
 		</script>
 
-		<div id="menu" style="position:absolute; right:20px; top:70px;
-			border-style:solid; border-width:1px; width:180px; height:115px;" >
+		<div id="menu" style="position:absolute; right:10%; top:70px;
+			    border-width:1px; width:180px; height:115px;" >
 				<p>Numerator: <input type="int" name="numer" onkeyup="onSubmit()"
 				id="num_input" placeholder="numerator"><br>
 				Denominator: <input type="int" name="denom" onkeyup="onSubmit()"
@@ -61,7 +63,7 @@
 				Base/modulus: <input type="int" name="mod" onkeyup="onSubmit()"
 				id="mod_input" placeholder="modulus"><br></p>
 		</div>
-		<div id="info" style="position:absolute; right:20px; top:225px;
+		<div id="info" style="position:absolute; right:10%px; top:225px;
 			border-style:solid; border-width:1px; width:250px; height:400px;" >
 			<p>
 				Doing<br>
