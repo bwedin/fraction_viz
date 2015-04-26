@@ -59,18 +59,17 @@
 	<body>
 		<center><h2>Rational Fraction Visualization</h2></center>
 
-		<div id="viz_container">
-			<script>
-			var svg_container = d3.select("body").append("svg")
-																					.attr("width",600)
-																					.attr("height",600)
 
-			var min;
-			changeSize();
-			window.addEventListener('resize', changeSize);
+		<script>
+		var svg_container = d3.select("body").append("svg")
+																				.attr("width",600)
+																				.attr("height",600)
+		var min;
+		changeSize();
+		window.addEventListener('resize', changeSize);
 
-			</script>
-		</div>
+		</script>
+
 		<div id="container">
 			<div id="menu">
 					<p>Numerator: <input type="int" name="numer" onkeyup="onSubmit()"
