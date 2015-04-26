@@ -40,22 +40,55 @@ function drawLines(remainder_array,line_data,svg_container) {
   "firebrick", "fuchsia", "indigo", "lightsalmon", "mediumorchid",
   "mediumspringgreen", "royalblue", "tomato", "violet"]
 
-  if(1==1){
+  //random (except not)
+  if(1==0) {
     for (var i = 0; i < line_data_length; i++) {
     var lineGraph = svg_container.append("path")
                              .attr("d", lineFunction(line_data[i]))
                              .attr("stroke", color_list[i%color_list.length])
                             .attr("stroke-width", 2)
                             .attr("fill", "none");
-  	}
+    }
   }
   else {
-    for (var i = 0; i < line_data_length; i++) {
-    var lineGraph = svg_container.append("path")
-                             .attr("d", lineFunction(line_data[i]))
-                             .attr("stroke", "blue")
-                            .attr("stroke-width", 4)
-                            .attr("fill", "none");
-  	}
+  if(remainder_array[0]==1 || 3){
+    if(1==1){
+      for (var i = 0; i < line_data_length; i++) {
+      var lineGraph = svg_container.append("path")
+                               .attr("d", lineFunction(line_data[i]))
+                               .attr("stroke", color_list[i%color_list.length])
+                              .attr("stroke-width", 2)
+                              .attr("fill", "none");
+    	}
+    }
+    else {
+      for (var i = 0; i < line_data_length; i++) {
+      var lineGraph = svg_container.append("path")
+                               .attr("d", lineFunction(line_data[i]))
+                               .attr("stroke", "blue")
+                              .attr("stroke-width", 4)
+                              .attr("fill", "none");
+    	}
+    }
+  }
+  else{
+    if(1==1){
+      for (var i = 0; i < line_data_length; i++) {
+      var lineGraph = svg_container.append("path")
+                               .attr("d", lineFunction(line_data[i]))
+                               .attr("stroke", color_list[i%color_list.length])
+                              .attr("stroke-width", 2)
+                              .attr("fill", "none");
+    	}
+    }
+    else {
+      for (var i = 0; i < line_data_length; i++) {
+      var lineGraph = svg_container.append("path")
+                               .attr("d", lineFunction(line_data[i]))
+                               .attr("stroke", "blue")
+                              .attr("stroke-width", 4)
+                              .attr("fill", "none");
+    	}
+    }
   }
 }
