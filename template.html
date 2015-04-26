@@ -12,17 +12,6 @@
 		<script type="text/javascript"></script>
     <script src="js/bootstrap.min.js"></script>
 		<script src="http://code.jquery.com/jquery.js"></script>
-		<script>
-		function changeSize(){
-		min = document.documentElement.clientWidth - 300;
-  	var height = document.documentElement.clientHeight;
-		if(height-90 < min) {
-			min = height-90;
-		}
-		svg_container.attr("width",min)
-							.attr("height",min);
-		}
-		</script>
 		<script type="text/javascript">
 		function onSubmit() {
 		var valid_input = validateForm();
@@ -35,6 +24,17 @@
 			var line_paths = createPathList(remainder_info[1], min);
 			drawLines(remainder_info,line_paths,svg_container);
 			}
+		}
+		</script>
+		<script>
+		function changeSize(){
+		min = document.documentElement.clientWidth - 300;
+  	var height = document.documentElement.clientHeight;
+		if(height-90 < min) {
+			min = height-90;
+		}
+		svg_container.attr("width",min)
+							.attr("height",min);
 		}
 		</script>
 	</head>
