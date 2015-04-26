@@ -40,7 +40,7 @@ function is_happy(n){
 }
 
 function prime_factors(n){
-	factors = [1]
+	factors = [1];
 	for(k = 2; k < Math.floor(n/2); k++){
 		//console.log(i);
 		if (is_prime(k)){
@@ -57,6 +57,6 @@ function prime_factors(n){
 	if (is_prime(n)){
 		factors.push(n)
 	}
-	return factors
+	return factors;
 }
 
