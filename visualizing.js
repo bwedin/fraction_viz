@@ -31,14 +31,31 @@ function drawLines(remainder_array,line_data,svg_container) {
                            .y(function(d) { return d.y; })
                            .interpolate("linear");
 
+  <!-- var colorful = document.getElementById('num_input').value; -->
+
 
   var line_data_length = line_data.length;
 
-  for (var i = 0; i < line_data_length; i++) {
-  var lineGraph = svg_container.append("path")
-                           .attr("d", lineFunction(line_data[i]))
-                           .attr("stroke", "blue")
-                          .attr("stroke-width", 2)
-                          .attr("fill", "none");
-	}
+  var color_list = ["aqua", "crimson", "limegreen", "darkorange", "darkslateblue",
+  "firebrick", "fuchsia", "indigo", "lightsalmon", "mediumorchid",
+  "mediumspringgreen", "royalblue", "tomato", "violet"]
+
+  if(1==1){
+    for (var i = 0; i < line_data_length; i++) {
+    var lineGraph = svg_container.append("path")
+                             .attr("d", lineFunction(line_data[i]))
+                             .attr("stroke", color_list[i%color_list.length])
+                            .attr("stroke-width", 2)
+                            .attr("fill", "none");
+  	}
+  }
+  else {
+    for (var i = 0; i < line_data_length; i++) {
+    var lineGraph = svg_container.append("path")
+                             .attr("d", lineFunction(line_data[i]))
+                             .attr("stroke", "blue")
+                            .attr("stroke-width", 4)
+                            .attr("fill", "none");
+  	}
+  }
 }
