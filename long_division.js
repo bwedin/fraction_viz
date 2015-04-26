@@ -1,5 +1,4 @@
 function long_division(n, d, mod){
-	console.log("D")
 	var remainders = [n];
 	var ptemp = n;
 	var qtemp = -4;
@@ -12,7 +11,6 @@ function long_division(n, d, mod){
 }
 
 function what_type(remainders, d, mod){
-	console.log("C")	
 	if(gcd(mod, d) == 1){
 		var result = find_period(remainders, 3);
 		return [3, result[0], result[1]];
@@ -63,16 +61,14 @@ function find_period(remainders, type){
 				break;
 			}
 		}
-		//console.log(remainders)
+
 		return [remainders.slice(0, end+1), end-start+1];
 	}
 	//remainders, and the length of the period
-	//console.log([remainders.slice(0, i), i-1])
 	return [remainders.slice(0, i), i-1];
 }
 
 function gcd(a, b) {
-	console.log("B")
 
     if (!b) {
         return a;
@@ -80,6 +76,4 @@ function gcd(a, b) {
     return gcd(b, a % b);
 }
 
-var ld = long_division(4, 9, 5)
-console.log(ld)
 
