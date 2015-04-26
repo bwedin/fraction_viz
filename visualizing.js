@@ -18,10 +18,10 @@ function createPathList(remainder_array,win_size) {
   var listOfAngles = []
   var listOfJumps = []
   for (var i = 1; i < remainders_length; i++) {
-    var lineData = [ { "x": Math.floor(last*scale),
-    "y": Math.floor(win_size-last*scale)},  { "x": Math.floor(last*scale),
+    var lineData = [ { "x": Math.floor(last*scale)+30,
+    "y": Math.floor(win_size-last*scale)},  { "x": Math.floor(last*scale)+30,
     "y": Math.floor(win_size-remainder_array[i]*scale)},
-                 { "x": Math.floor(remainder_array[i]*scale),
+                 { "x": Math.floor(remainder_array[i]*scale)+30,
                  "y": Math.floor(win_size-remainder_array[i]*scale)} ]
     listOfAngles.push(lineData);
     listOfJumps.push(Math.abs(remainder_array[i]-last));
@@ -41,7 +41,9 @@ function drawLines(remainder_array,line_data,jump_data,svg_container) {
                            .y(function(d) { return d.y; })
                            .interpolate("linear");
 
-  <!-- var colorful = document.getElementById('num_input').value; -->
+  var mod10 = document.getElementById('mod10'),checked;
+  var random = document.getElementById('random');
+  var mono = document.getElementById('mono');
 
 
   var line_data_length = line_data.length;
@@ -49,22 +51,26 @@ function drawLines(remainder_array,line_data,jump_data,svg_container) {
 
   var color_list = ["aqua", "crimson", "limegreen", "darkorange", "darkslateblue",
   "firebrick", "fuchsia", "indigo", "lightsalmon", "mediumorchid",
-  "mediumspringgreen", "royalblue", "tomato", "violet"];
+  "mediumspringgreen", "royalblue", "tomato", "violet","maroon", "red",
+  "darkorange", "gold", "greenyellow",
+    "lime", "cyan", "royalblue", "indigo", "fuchsia", "yellow", "salmon"];
+  var color_list_length = color_list.length;
 
   var color_ordered = ["maroon", "red", "darkorange", "gold", "greenyellow",
     "lime", "cyan", "royalblue", "indigo", "fuchsia"]
 
   //random (except not)
-  if(1==2) {
+  if(document.getElementById('random').checked) {
     for (var i = 0; i < line_data_length; i++) {
+    var randomInt = Math.floor(Math.random()*color_list_length);
     var lineGraph = svg_container.append("path")
                              .attr("d", lineFunction(line_data[i]))
-                             .attr("stroke", color_list[i%color_list.length])
+                             .attr("stroke", color_list[randomInt%color_list.length])
                             .attr("stroke-width", 2)
                             .attr("fill", "none");
     }
   }
-  else if (1==1) {
+  else if (document.getElementById('mod10').checked) {
     for (var i = 0; i < line_data_length; i++) {
     var lineGraph = svg_container.append("path")
                              .attr("d", lineFunction(line_data[i]))

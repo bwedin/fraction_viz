@@ -22,7 +22,11 @@
 			var numer = parseInt(document.getElementById('num_input').value);
 	  	var denom = parseInt(document.getElementById('denom_input').value);
 	  	var mod = parseInt(document.getElementById('mod_input').value);
+
+
+
 			var remainder_info = long_division(numer,denom,mod);
+			min = findMin();
 			svg_container.selectAll("*").remove();
 			var remainder_list = createPathList(remainder_info[1], min);
 			drawLines(remainder_info,remainder_list[0],remainder_list[1],svg_container);
@@ -46,12 +50,30 @@
 
 		<script>
 		function findMin(){
-		min = document.documentElement.clientWidth - 300;
+		min = document.documentElement.clientWidth - 350;
   	var height = document.documentElement.clientHeight;
 		if(height-90 < min) {
 			min = height-90;
 		}
 		return min;
+		}
+		</script>
+
+		<script>
+		function example1(){
+			document.getElementById('num_input').value = '1';
+			document.getElementById('denom_input').value = '101';
+			document.getElementById('mod_input').value = '103';
+			onSubmit();
+		}
+		</script>
+
+		<script>
+		function example1(){
+			document.getElementById('num_input').value = '1';
+			document.getElementById('denom_input').value = '101';
+			document.getElementById('mod_input').value = '103';
+			onSubmit();
 		}
 		</script>
 
@@ -79,6 +101,14 @@
 					id="denom_input" placeholder="denominator"><br>
 					Base/modulus: <input type="int" name="mod" onkeyup="onSubmit()"
 					id="mod_input" placeholder="modulus"><br></p>
+				</div>
+					<div>
+					<input type="radio" id="mod10" name="color" value="mod10"
+						checked="checked" onclick="onSubmit()">  Mod-10 color
+					<input type="radio" id="random" name="color" value="random"
+					onclick="onSubmit()">  Random
+					<input type="radio" id="mono" name="color" value="mono"
+					onclick="onSubmit()">  Black
 			</div>
 			<div id="info">
 				<p>
@@ -96,6 +126,13 @@
 					</div>
 				</p>
 			</div>
+			<div id="links"
+			<p>
+				<b> Some examples</b>
+				<br>
+				<a id="myLink" href="#" onclick="example1();return false;">Example 1: 1/101, Base 103</a>
+				</div>
+			</p>
 		</div>
 	</body>
 </html>
