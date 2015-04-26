@@ -7,13 +7,22 @@ function createPathList(remainder_array,win_size) {
     } //Do something
 	}
   var max = max+10;
-  var scale = Math.floor(win_size/max);
+  if(win_size<max) {
+    var scale = Math.floor(max/win_size)+1;
+    var scale = 1/scale;
+  }
+  else{
+    var scale = Math.floor(win_size/max);
+  }
   var last = remainder_array[0];
   var listOfAngles = []
   var listOfJumps = []
   for (var i = 1; i < remainders_length; i++) {
-    var lineData = [ { "x": last*scale,   "y": (win_size-last*scale)},  { "x": last*scale,  "y": (win_size-remainder_array[i]*scale)},
-                 { "x": remainder_array[i]*scale,  "y": (win_size-remainder_array[i]*scale)} ]
+    var lineData = [ { "x": Math.floor(last*scale),
+    "y": Math.floor(win_size-last*scale)},  { "x": Math.floor(last*scale),
+    "y": Math.floor(win_size-remainder_array[i]*scale)},
+                 { "x": Math.floor(remainder_array[i]*scale),
+                 "y": Math.floor(win_size-remainder_array[i]*scale)} ]
     listOfAngles.push(lineData);
     listOfJumps.push(Math.abs(remainder_array[i]-last));
     last = remainder_array[i];
