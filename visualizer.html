@@ -79,6 +79,15 @@
 		}
 		</script>
 
+		<script>
+		function example3(){
+			document.getElementById('num_input').value = '2';
+			document.getElementById('denom_input').value = '109';
+			document.getElementById('mod_input').value = '399';
+			onSubmit();
+		}
+		</script>
+
 	</head>
 	<body>
 		<center><h2>Rational Fraction Visualization</h2></center>
@@ -104,6 +113,7 @@
 					id="mod_input" placeholder="modulus"><br></p>
 				</div>
 					<div>
+						<br>
 					<input type="radio" id="mod10" name="color" value="mod10"
 						checked="checked" onclick="onSubmit()">  Mod-10 color
 					<input type="radio" id="random" name="color" value="random"
@@ -113,6 +123,7 @@
 			</div>
 			<div id="info">
 				<p>
+					<br>
 					<b> Interesting Facts</b>
 					<br>
 					<u> Numerator</u>
@@ -134,6 +145,8 @@
 				<a id="myLink" href="#" onclick="example1();return false;">Example 1: 1/101, Base 103</a>
 				<br>
 				<a id="myLink" href="#" onclick="example2();return false;">Example 2: 42/4242, Base 424242</a>
+				<br>
+				<a id="myLink" href="#" onclick="example3();return false;">Example 2: 2/109, Base 399</a>
 				</div>
 			</p>
 		</div>
