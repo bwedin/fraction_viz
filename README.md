@@ -3,4 +3,4 @@ A post modern view of Fractions and the Reciprocals of Fermat Primes (with progr
 
 More updates to be posted.
 
-![alt tag](good_scan.pdf)
+![alt tag](https://github.com/mariellefoster/fraction_viz/blob/master/good_scan.pdf)
