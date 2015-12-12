@@ -1,6 +1,6 @@
 # fraction_viz: A post modern view of Fractions and the Reciprocals of Fermat Primes
 (with programming involved)  
-Many thanks to Professor Rafe Jones.
+Many thanks to Professor Rafe Jones. You can see this in all its glory here (http://www.people.carleton.edu/~rfjones/fraction_viz/visualizer.html) and read the number theory paper this is based of off here (http://www.people.carleton.edu/~rfjones/Job%20Searches/Job_Search_2008/magart.pdf) 
 
 ![Fraction](https://github.com/mariellefoster/fraction_viz/blob/master/frac2.png)
 
