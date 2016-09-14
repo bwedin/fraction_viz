@@ -1,6 +1,6 @@
 # fraction_viz: A post modern view of Fractions and the Reciprocals of Fermat Primes
 (with programming involved)  
-Many thanks to Professor Rafe Jones.
+Many thanks to Professor Rafe Jones. You can see this in all its glory here ([on Rafe Jones' page](http://www.people.carleton.edu/~rfjones/fraction_viz/visualizer.html)) and read the number theory paper this is based of off here ([Rafe's Paper](http://www.people.carleton.edu/~rfjones/Job%20Searches/Job_Search_2008/magart.pdf))
 
 ![Fraction](https://github.com/mariellefoster/fraction_viz/blob/master/frac2.png)
 
@@ -25,5 +25,7 @@ http://en.wikipedia.org/wiki/Happy_number
 Prime Number:
 
 A prime number (or a prime) is a natural number greater than 1 that has no positive divisors other than 1 and itself. A natural number greater than 1 that is not a prime number is called a composite number.
+
+More to come
 
 http://en.wikipedia.org/wiki/Prime_number
